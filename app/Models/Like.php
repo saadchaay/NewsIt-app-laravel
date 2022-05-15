@@ -9,7 +9,9 @@ class Like extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = [
+        'user_id',
+    ];
 
     public function post()
     {

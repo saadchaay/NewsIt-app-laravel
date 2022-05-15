@@ -32,7 +32,7 @@
                     
                         <div class="flex items-center">
                             @auth
-                                    <form action="" method="post" class="mr-1">
+                                    <form action="{{ route('posts.likes', $post->id) }}" method="post" class="mr-1">
                                         @csrf
                                         <button type="submit" class="text-blue-500">Vote</button>
                                     </form>
