@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PostPolicy
@@ -14,7 +15,7 @@ class PostPolicy
      *
      * @return void
      */
-    public function delete(User $user, Post $posts)
+    public function delete(User $user, Post $post)
     {
         
     }
