@@ -30,26 +30,25 @@
                     
                         <p class="mb-2">{{ $post->body }}</p>
                     
-                        {{-- <div class="flex items-center">
+                        <div class="flex items-center">
                             @auth
-                                @if (!$post->likedBy(auth()->user()))
-                                    <form action="{{ route('posts.likes', $post) }}" method="post" class="mr-1">
+                                    <form action="" method="post" class="mr-1">
                                         @csrf
-                                        <button type="submit" class="text-blue-500">Like</button>
+                                        <button type="submit" class="text-blue-500">Vote</button>
                                     </form>
-                                @else
-                                    <form action="{{ route('posts.likes', $post) }}" method="post" class="mr-1">
+                                    <form action="" method="post" class="mr-1">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="text-blue-500">Unlike</button>
+                                        <button type="submit" class="text-blue-500">Unvote</button>
                                     </form> 
-                                @endif
+
+                                    <span>{{ $post->likes->count() }} {{ Str::plural('Vote', $post->likes->count()) }}</span>
                             @endauth
-                    
-                            <span>{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }}</span>
-                        </div> --}}
+                        
+                        </div>
                     </div>
                 @endforeach
+                {{-- {{ $posts->links() }} --}}
             @else
                 <p>There are no posts</p>
             @endif
