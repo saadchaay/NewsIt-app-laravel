@@ -23,15 +23,18 @@
                 </form>
             @endauth
 
-            {{-- @if ($posts->count())
-                @foreach ($posts as $post)
+            @if ($posts->count())
+            @foreach ($posts as $item)
+                <p>{{$item->body}}</p>
+            @endforeach
+                {{-- @foreach ($posts as $post)
                     <x-post :post="$post" />
                 @endforeach
 
-                {{ $posts->links() }}
+                {{ $posts->links() }} --}}
             @else
                 <p>There are no posts</p>
-            @endif --}}
+            @endif
         </div>
     </div>
 @endsection
