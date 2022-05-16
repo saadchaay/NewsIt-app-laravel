@@ -18,6 +18,11 @@ class Post extends Model
         return $this->likes->contains('user_id', $user->id);
     }
 
+    public function commentBy(User $user)
+    {
+        return $this->comments->contains('user_id', $user->id);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

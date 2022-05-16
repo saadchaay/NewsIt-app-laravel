@@ -5,8 +5,9 @@
 
     <p class="mb-2">{{ $post->body }}</p>
     @foreach ( $post->comments as $comment )
-        <x-comment :comment="$comment" />
+        comment 1
     @endforeach
+
     @can('delete', $post)
     <div>
         <form action="{{ route('posts.destroy', $post) }}" method="post">
