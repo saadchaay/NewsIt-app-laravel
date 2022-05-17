@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-center">
+    <div class="flex-col justify-items-center">
         <div class="w-8/12 bg-white p-6 rounded-lg">
             @auth
                 <form action="{{ route('posts') }}" method="post" class="mb-4">
@@ -22,10 +22,11 @@
                     </div>
                 </form>
             @endauth
-
+        </div>
+        <div class="w-8/12 p-6 rounded-lg">
             @if ($posts->count())
                 @foreach ($posts as $post)
-                <div class="w-8/12 bg-gray-100 p-6 rounded-lg mb-6">
+                <div class="w-8/12 w-full bg-gray-100 p-6 rounded-lg mb-6">
                     <x-post :post="$post" />
                 </div>
                 @endforeach
@@ -33,6 +34,6 @@
             @else
                 <p>There are no posts</p>
             @endif
-        </div>
+        </div> 
     </div>
 @endsection

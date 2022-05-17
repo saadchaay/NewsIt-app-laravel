@@ -3,10 +3,9 @@
 <div class="mb-4">
     <a href="{{ route('users.posts', $post->user) }}" class="font-bold">{{ $post->user->name }}</a> <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
 
-    <p class="mb-2">{{ $post->body }}</p>
-    @foreach ( $post->comments as $comment )
-       <x-comment :comment="$comment" />
-    @endforeach
+    <div class="mx-5 bg-white p-6 rounded-lg">
+        <p class="mb-2">{{ $post->body }}</p>
+    </div>
 
     @can('delete', $post)
     <div>
@@ -35,4 +34,10 @@
         @endauth
         <span>{{ $post->likes->count() }} {{ Str::plural('Vote', $post->likes->count()) }}</span>
     </div>
+    <div class="">
+
+    </div>
+    @foreach ( $post->comments as $comment )
+    <x-comment :comment="$comment" />
+ @endforeach
 </div>
