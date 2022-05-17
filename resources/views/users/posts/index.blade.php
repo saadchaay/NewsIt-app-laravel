@@ -12,7 +12,7 @@
                 @if ($posts->count())
                     @foreach ($posts as $post)
                     <div class="w-8/12 bg-gray-100 p-6 rounded-lg mb-6">
-                        <x-post :post="$post" />
+                        <x-post :post="$post" :commets="$post->comments"/>
                     </div>
                     @endforeach
 
